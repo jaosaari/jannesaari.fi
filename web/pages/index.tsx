@@ -6,7 +6,7 @@ import { Fragment } from 'react';
 import Hero from '@components/Hero';
 import client from '../lib/sanity';
 
-export default function Home({ data }) {
+export default function Home() {
   return (
     <Fragment>
       <Head>

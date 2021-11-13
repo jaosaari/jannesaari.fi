@@ -6,10 +6,17 @@ import { Fragment, useState } from 'react';
 type ModalProps = {
   post: {
     title: string;
+    description: string;
     imageUrl: string;
-    href: string;
+    date: string;
     datetime: string;
+    readingTime: string;
+    href: string;
+    category: {
+      name: string;
+    };
     author: {
+      imageUrl: string;
       name: string;
     };
   };
