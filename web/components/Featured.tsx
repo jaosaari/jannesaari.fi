@@ -1,18 +1,16 @@
-import Modal from './Modal';
+import { Feature } from '@models/feature';
+import Modal from '@components/Modal';
 
 type FeaturedProps = {
-  features: {
-    title: string;
-    labels: {
-      title: string;
-      description: string;
-    }[];
-  }[];
+  features: Feature[];
 };
 
 const Featured = ({ features }: FeaturedProps) => {
   return (
-    <section className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <section
+      id="työt"
+      className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+    >
       <div className="absolute inset-0">
         <div className="bg-white h-1/3 sm:h-2/3 flex"></div>
       </div>

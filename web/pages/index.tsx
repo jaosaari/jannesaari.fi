@@ -5,24 +5,16 @@ import History from '@components/History';
 import Header from '@components/Header';
 import { Fragment } from 'react';
 import Hero from '@components/Hero';
-import groq from 'groq';
-import client from '../lib/sanity';
+import { sanityClient, usePreviewSubscription } from '@lib/sanity';
+import { featuresQuery } from '@lib/queries/features';
+import { Feature } from '@models/feature';
 
 type Props = {
-  data: {
-    featuresData: {
-      title: string;
-      labels: {
-        title: string;
-        description: string;
-      }[];
-    }[];
-  };
+  features: Feature[];
 };
 
-const Index = ({ data }: Props) => {
-  const { featuresData } = data;
-  console.log('featuresData', featuresData);
+const Index = ({ features }: Props) => {
+  console.log('features', features);
   return (
     <Fragment>
       <Head>
@@ -33,7 +25,7 @@ const Index = ({ data }: Props) => {
       <Header></Header>
       <main>
         <Hero></Hero>
-        <Featured features={featuresData}></Featured>
+        <Featured features={features}></Featured>
         <History></History>
       </main>
       <Footer></Footer>
@@ -43,16 +35,14 @@ const Index = ({ data }: Props) => {
 
 export default Index;
 
-const featuresQuery = groq`*[_type == 'feature'] {title, labels[]->{title, description}}`;
-
 export async function getStaticProps() {
-  const featuresData = await client.fetch(featuresQuery);
+  const features = await sanityClient.fetch(featuresQuery);
 
-  const data = { featuresData };
+  // const data = { featuresData };
 
   return {
     props: {
-      data,
+      features,
     },
   };
 }

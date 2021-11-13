@@ -1,12 +1,15 @@
 import React from 'react';
-import Topography from './Topography';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 export default function Hero() {
   return (
-    <div>
+    <section>
       {/* Hero card */}
       <div className="relative">
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900" />
+        {/* <h1 className="absolute inset-x-0 bottom-0 h-1/2 text-indigo-300 mix-blend-multiply text-9xl font-black z-10">
+          JANNE SAARI
+        </h1> */}
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
             <div className="absolute inset-0">
@@ -16,6 +19,9 @@ export default function Hero() {
                 alt="People working on laptops"
               />
               <div className="absolute inset-0 bg-indigo-700 mix-blend-multiply" />
+              {/* <h1 className="absolute inset-0 text-indigo-300 mix-blend-multiply text-9xl font-black">
+                JANNE SAARI
+              </h1> */}
             </div>
             <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
               <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
@@ -48,51 +54,25 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Logo cloud */}
-      <div className="bg-gray-100">
+      {/* links cloud */}
+      <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-            (tähän relevantit linkit)
-          </p>
-          <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-            <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-                alt="Tuple"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-                alt="Mirage"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                alt="StaticKit"
-              />
-            </div>
-            <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                alt="Transistor"
-              />
-            </div>
-            <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-              <img
-                className="h-12"
-                src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                alt="Workcation"
-              />
-            </div>
+          <div className="mt-6 flex justify-center gap-8">
+            <a
+              href=""
+              className="flex justify-center text-white hover:text-gray-500 cursor-pointer"
+            >
+              <AiFillGithub size="4rem"></AiFillGithub>
+            </a>
+            <a
+              href=""
+              className="flex justify-center text-white hover:text-gray-500 cursor-pointer"
+            >
+              <AiFillLinkedin size="4rem"></AiFillLinkedin>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

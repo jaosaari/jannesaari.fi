@@ -1,16 +1,10 @@
 import { Dialog, Transition } from '@headlessui/react';
+import { Feature } from '@models/feature';
+import { Label } from '@models/label';
 import { Fragment, useState } from 'react';
 
-// import * as React from 'react';
-
 type ModalProps = {
-  feature: {
-    title: string;
-    labels: {
-      title: string;
-      description: string;
-    }[];
-  };
+  feature: Feature;
 };
 
 const Modal = ({ feature }: ModalProps) => {
@@ -23,8 +17,6 @@ const Modal = ({ feature }: ModalProps) => {
   function openModal() {
     setIsOpen(true);
   }
-
-  console.log(feature);
 
   return (
     <>
@@ -42,17 +34,25 @@ const Modal = ({ feature }: ModalProps) => {
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">
             <p className="text-sm font-medium text-indigo-600">
-              <a className="hover:underline">post.category.name</a>
+              <a className="hover:underline">Yläotsikko</a>
             </p>
-            <p className="block mt-2">
+            <div className="flex flex-col mt-2">
               <a className="text-xl font-semibold text-gray-900">
                 {feature.title}
               </a>
-              <a className="mt-3 text-base text-gray-500">post.description</a>
-            </p>
+              <a className="mt-3 text-base text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </a>
+            </div>
           </div>
           <div className="mt-6 flex items-center">
-            <div className="flex-shrink-0">
+            {/* <div className="flex-shrink-0">
               <p>
                 <span className="sr-only">post.author.name</span>
                 <img
@@ -61,17 +61,18 @@ const Modal = ({ feature }: ModalProps) => {
                   alt=""
                 />
               </p>
-            </div>
-            <div className="ml-3">
-              <p className="text-sm font-medium text-gray-900">
-                {/* <a className="hover:underline">Janne Saari</a> */}
-                {feature.labels.map((label, i) => label.title)}
-              </p>
-              <div className="flex space-x-1 text-sm text-gray-500">
+            </div> */}
+            <div className="">
+              {/* <a className="hover:underline">Janne Saari</a> */}
+              {feature.labels.map((label, i) => (
+                <Label key={i} label={label}></Label>
+              ))}
+
+              {/* <div className="flex space-x-1 text-sm text-gray-500">
                 <time dateTime="post.datetime">post.date</time>
                 <span aria-hidden="true">&middot;</span>
                 <span>post.readingTime read</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -127,7 +128,19 @@ const Modal = ({ feature }: ModalProps) => {
                   />
                 </div>
                 <div className="mt-2">
-                  <p className="text-sm text-gray-500">post.description</p>
+                  <p className="text-sm text-gray-500">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                  {feature.labels.map((label, i) => (
+                    <Label key={i} label={label}></Label>
+                  ))}
                 </div>
 
                 <div className="mt-4">
@@ -149,3 +162,15 @@ const Modal = ({ feature }: ModalProps) => {
 };
 
 export default Modal;
+
+export interface Props {
+  label: Label;
+}
+
+export function Label({ label }: Props) {
+  return (
+    <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-pink-600 bg-pink-200 uppercase last:mr-0 mr-1">
+      {label.title}
+    </span>
+  );
+}
