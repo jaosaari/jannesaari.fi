@@ -4,30 +4,16 @@ import { Fragment, useState } from 'react';
 // import * as React from 'react';
 
 type ModalProps = {
-  post: {
+  feature: {
     title: string;
-    description: string;
-    imageUrl: string;
-    date: string;
-    datetime: string;
-    readingTime: string;
-    href: string;
-    category: {
-      name: string;
-    };
-    author: {
-      imageUrl: string;
-      name: string;
-    };
+    labels: {
+      title: string;
+      description: string;
+    }[];
   };
 };
 
-// export default function App(props: IAppProps) {
-//   return <div></div>;
-// }
-
-const Modal = ({ post }: ModalProps) => {
-  // const { title } = post;
+const Modal = ({ feature }: ModalProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -38,11 +24,8 @@ const Modal = ({ post }: ModalProps) => {
     setIsOpen(true);
   }
 
-  // console.log(post.title);
+  console.log(feature);
 
-  console.log(post);
-  console.log(post.title);
-  console.log(post.imageUrl);
   return (
     <>
       <div
@@ -52,41 +35,42 @@ const Modal = ({ post }: ModalProps) => {
         <div className="flex-shrink-0">
           <img
             className="h-48 w-full object-cover"
-            src={post.imageUrl}
+            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
             alt=""
           />
         </div>
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">
             <p className="text-sm font-medium text-indigo-600">
-              <p className="hover:underline">{post.category.name}</p>
+              <a className="hover:underline">post.category.name</a>
             </p>
             <p className="block mt-2">
-              <p className="text-xl font-semibold text-gray-900">
-                {post.title}
-              </p>
-              <p className="mt-3 text-base text-gray-500">{post.description}</p>
+              <a className="text-xl font-semibold text-gray-900">
+                {feature.title}
+              </a>
+              <a className="mt-3 text-base text-gray-500">post.description</a>
             </p>
           </div>
           <div className="mt-6 flex items-center">
             <div className="flex-shrink-0">
               <p>
-                <span className="sr-only">{post.author.name}</span>
+                <span className="sr-only">post.author.name</span>
                 <img
                   className="h-10 w-10 rounded-full"
-                  src={post.author.imageUrl}
+                  src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
                   alt=""
                 />
               </p>
             </div>
             <div className="ml-3">
               <p className="text-sm font-medium text-gray-900">
-                <p className="hover:underline">{post.author.name}</p>
+                {/* <a className="hover:underline">Janne Saari</a> */}
+                {feature.labels.map((label, i) => label.title)}
               </p>
               <div className="flex space-x-1 text-sm text-gray-500">
-                <time dateTime={post.datetime}>{post.date}</time>
+                <time dateTime="post.datetime">post.date</time>
                 <span aria-hidden="true">&middot;</span>
-                <span>{post.readingTime} read</span>
+                <span>post.readingTime read</span>
               </div>
             </div>
           </div>
@@ -133,17 +117,17 @@ const Modal = ({ post }: ModalProps) => {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  {post.title}
+                  {feature.title}
                 </Dialog.Title>
                 <div className="mt-2">
                   <img
                     className="h-48 w-full object-cover"
-                    src={post.imageUrl}
+                    src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
                     alt=""
                   />
                 </div>
                 <div className="mt-2">
-                  <p className="text-sm text-gray-500">{post.description}</p>
+                  <p className="text-sm text-gray-500">post.description</p>
                 </div>
 
                 <div className="mt-4">

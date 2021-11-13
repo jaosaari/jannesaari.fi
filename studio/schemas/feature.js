@@ -12,7 +12,7 @@ export default {
         name: 'labels',
         title: 'Labels',
         type: 'array',
-        of: [{type: 'labelReference'}]
+        of: [{type: 'reference', to: [{type: 'label'}]}]
       },
       {
         name: 'mainImage',

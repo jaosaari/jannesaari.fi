@@ -57,12 +57,13 @@ export default function Header() {
         <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
-              <span className="sr-only">Workflow</span>
-              <img
+              <span className="sr-only">Janne Saari</span>
+              {/* <img
                 className="h-8 w-auto sm:h-10"
                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                 alt=""
-              />
+              /> */}
+              <p>Janne Saari</p>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">

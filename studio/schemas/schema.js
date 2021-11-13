@@ -10,7 +10,6 @@ import category from './category'
 import post from './post'
 import author from './author'
 import label from './label'
-import labelReference from './labelReference'
 import feature from './feature'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -27,7 +26,6 @@ export default createSchema({
     category,
     feature,
     label,
-    labelReference,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
