@@ -18,6 +18,7 @@ type Props = {
 };
 
 const Index = ({ features, experiences }: Props) => {
+  console.log('experiences', experiences);
   return (
     <Fragment>
       <Head>
