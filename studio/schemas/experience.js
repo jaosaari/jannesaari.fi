@@ -4,8 +4,18 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'title',
-        title: 'Title',
+        name: 'company',
+        title: 'Company',
+        type: 'string',
+      },
+      {
+        name: 'position',
+        title: 'Position',
+        type: 'string',
+      },
+      {
+        name: 'location',
+        title: 'Location',
         type: 'string',
       },
       {
@@ -13,11 +23,24 @@ export default {
         title: 'Body',
         type: 'blockContent',
       },
+      {
+        name: 'dates',
+        title: 'Dates',
+        type: 'dates',
+      },
+      {
+        name: 'labels',
+        title: 'Labels',
+        type: 'array',
+        of: [{type: 'reference', to: [{type: 'label'}]}]
+      },
+
     ],
   
     preview: {
       select: {
-        title: 'title',
+        title: 'company',
+        subtitle: 'position',
       },
     },
   }

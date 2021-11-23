@@ -7,14 +7,17 @@ import { Fragment } from 'react';
 import Hero from '@components/Hero';
 import { sanityClient, usePreviewSubscription } from '@lib/sanity';
 import { featuresQuery } from '@lib/queries/features';
+import { experiencesQuery } from '@lib/queries/experiences';
 import { Feature } from '@models/feature';
+import { Experience } from '@models/experience';
+import { ContactMe } from '@components/ContactMe';
 
 type Props = {
   features: Feature[];
+  experiences: Experience[];
 };
 
-const Index = ({ features }: Props) => {
-  console.log('features', features);
+const Index = ({ features, experiences }: Props) => {
   return (
     <Fragment>
       <Head>
@@ -26,7 +29,8 @@ const Index = ({ features }: Props) => {
       <main>
         <Hero></Hero>
         <Featured features={features}></Featured>
-        <History></History>
+        <History experiences={experiences}></History>
+        <ContactMe></ContactMe>
       </main>
       <Footer></Footer>
     </Fragment>
@@ -37,12 +41,14 @@ export default Index;
 
 export async function getStaticProps() {
   const features = await sanityClient.fetch(featuresQuery);
+  const experiences = await sanityClient.fetch(experiencesQuery);
 
   // const data = { featuresData };
 
   return {
     props: {
       features,
+      experiences,
     },
   };
 }
