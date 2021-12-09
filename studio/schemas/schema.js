@@ -11,6 +11,7 @@ import dates from './dates'
 import label from './label'
 import feature from './feature'
 import experience from './experience'
+import seo from './seo'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,6 +27,7 @@ export default createSchema({
     label,
     experience,
     dates,
+    seo,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

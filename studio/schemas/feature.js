@@ -1,3 +1,5 @@
+import customImage from '../lib/custom-image'
+
 export default {
     name: 'feature',
     title: 'Feature',
@@ -15,12 +17,21 @@ export default {
         of: [{type: 'reference', to: [{type: 'label'}]}]
       },
       {
-        name: 'mainImage',
-        title: 'Main image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
+        name: 'photos',
+        type: 'object',
+        fields: [
+          customImage({
+            title: 'Feature Photo (mobile)',
+            name: 'mobilePhoto'
+          }),
+          customImage({
+            title: 'Feature Photo (desktop)',
+            name: 'desktopPhoto'
+          })
+        ],
+        // hidden: ({ parent }) => {
+        //   return parent.bgType !== 'photo'
+        // }
       },
       {
         name: 'body',
