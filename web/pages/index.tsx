@@ -1,16 +1,16 @@
 import Head from 'next/head';
-import Footer from '@components/Footer';
-import Featured from '@components/Featured';
-import History from '@components/History';
-import Header from '@components/Header';
 import { Fragment } from 'react';
+import Header from '@components/Header';
 import Hero from '@components/Hero';
+import History from '@components/History';
+import Featured from '@components/Featured';
+import Footer from '@components/Footer';
+import ContactMe from '@components/ContactMe';
 import { sanityClient, usePreviewSubscription } from '@lib/sanity';
 import { featuresQuery } from '@lib/queries/features';
 import { experiencesQuery } from '@lib/queries/experiences';
 import { Feature } from '@models/feature';
 import { Experience } from '@models/experience';
-import { ContactMe } from '@components/ContactMe';
 
 type Props = {
   features: Feature[];

@@ -1,5 +1,6 @@
 // import sanityClient from '@sanity/client';
 import { SanityImageSource } from '@sanity/asset-utils';
+import sanityImage from '@sanity/image-url';
 import {
   createClient,
   createImageUrlBuilder,
@@ -26,7 +27,8 @@ const config = {
 // });
 
 // export default client;
-export const urlFor = (source: SanityImageSource) =>
-  createImageUrlBuilder(config).image(source);
+// export const urlFor = (source: SanityImageSource) =>
+//   createImageUrlBuilder(config).image(source);
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 export const sanityClient = createClient(config);
+export const imageBuilder = sanityImage(sanityClient);
