@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {}
 
-export const ContactMe = (props: Props) => {
+const ContactMe = (props: Props) => {
   return (
     <section className="relative py-16 bg-white">
       <div
@@ -124,3 +124,5 @@ export const ContactMe = (props: Props) => {
     </section>
   );
 };
+
+export default ContactMe;

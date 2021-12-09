@@ -7,9 +7,7 @@ export default function Hero() {
       {/* Hero card */}
       <div className="relative">
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900" />
-        {/* <h1 className="absolute inset-x-0 bottom-0 h-1/2 text-indigo-300 mix-blend-multiply text-9xl font-black z-10">
-          JANNE SAARI
-        </h1> */}
+
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
             <div className="absolute inset-0">
@@ -19,9 +17,6 @@ export default function Hero() {
                 alt="People working on laptops"
               />
               <div className="absolute inset-0 bg-indigo-700 mix-blend-multiply" />
-              {/* <h1 className="absolute inset-0 text-indigo-300 mix-blend-multiply text-9xl font-black">
-                JANNE SAARI
-              </h1> */}
             </div>
             <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
               <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
@@ -60,13 +55,13 @@ export default function Hero() {
           <div className="mt-6 flex justify-center gap-8">
             <a
               href=""
-              className="flex justify-center text-white hover:text-gray-500 cursor-pointer"
+              className="flex justify-center text-white animate-pulse hover:text-gray-200 cursor-pointer"
             >
               <AiFillGithub size="4rem"></AiFillGithub>
             </a>
             <a
               href=""
-              className="flex justify-center text-white hover:text-gray-500 cursor-pointer"
+              className="flex justify-center text-white animate-pulse hover:text-gray-200 cursor-pointer"
             >
               <AiFillLinkedin size="4rem"></AiFillLinkedin>
             </a>
