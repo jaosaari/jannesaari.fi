@@ -22,9 +22,9 @@
       "@lib/*": ["lib/*"],
       "@services/*": ["services/*"],
       "@styles/*": ["styles/*"]
-    },
-    "files": ["@types/block-content-to-react.d.ts"]
+    }
   },
+  "files": ["@types/block-content-to-react.d.ts"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
