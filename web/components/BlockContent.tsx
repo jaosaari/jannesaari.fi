@@ -3,10 +3,15 @@ import cx from 'classnames';
 import BlockContent from '@sanity/block-content-to-react';
 
 import { blockSerializers } from '@components/BlockSerializers';
+import { Body } from '@models/body';
 
-const Content = ({ blocks, className }) => {
+interface Props {
+  blocks?: Body;
+  className?: 'string';
+}
+const Content = ({ blocks = [], className = '' }: Props) => {
   if (!blocks) return null;
-
+  console.log('blocks', blocks);
   return (
     <BlockContent
       renderContainerOnSingleChild

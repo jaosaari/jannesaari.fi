@@ -34,8 +34,7 @@ export default {
         type: 'array',
         of: [{type: 'reference', to: [{type: 'label'}]}]
       },
-
-    ],
+        ],
   
     preview: {
       select: {

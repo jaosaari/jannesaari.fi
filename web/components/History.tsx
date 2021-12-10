@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Experience } from '@models/experience';
 import { useState, Fragment } from 'react';
 import { Tab, Transition } from '@headlessui/react';
